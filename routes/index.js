@@ -7,7 +7,7 @@ router.get('/', auth, (req, res) => {
     return res.send({message: 'tudo ok com o metodo get da raiz'})
 });
 
-router.post('/', (req, res) => {
+router.post('/', auth, (req, res) => {
     return res.send({message: 'tudo ok com o metodo post da raiz'})
 });
 
