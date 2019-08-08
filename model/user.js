@@ -15,7 +15,7 @@ const UserSchema = new Schema({
     },
 
     created: {type: Date, default: Date.now},
-    update_user: {type: Date, default: Date.now}
+    update_user: {type: Date}
 
 });
 
@@ -23,7 +23,7 @@ const UserSchema = new Schema({
 UserSchema.pre('save', async function(next){
     let user = this;
     if(!user.isModified('password')) return next();
-
+    
     user.password = await bcrypt.hash(user.password, 10);
     return next();
 
