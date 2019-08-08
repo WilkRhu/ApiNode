@@ -35,8 +35,7 @@ app.use('/', indexRoute);
 app.use('/users', userRoute);
 
 //Porta
-port = process.env.PORT || 3000;
-app.listen(port);
+app.listen(process.env.PORT || 3000);
 
 //Exportação do app
 module.exports = app;
