@@ -3,6 +3,7 @@ const router = express.Router();
 const Users = require('../model/user');
 const bcrypt = require('bcrypt');
 const jwt =  require('jsonwebtoken');
+const auth = require('../middlewares/auth');
 
 
 //Funçoes Auxiliares
@@ -10,8 +11,8 @@ const createUserToken = (userId) => {
     return jwt.sign({id: userId}, 'wilkcaetano', { expiresIn: '7d'});
 }
 
-
-router.get('/', async (req, res) =>{
+//Lista de Usuários, Só usuários autenticados
+router.get('/lista-users', auth, async (req, res) =>{
     try{
         const users = await Users.find({});
         return res.send(users);
@@ -21,6 +22,8 @@ router.get('/', async (req, res) =>{
     }
 });
 
+
+//Criação de usuários
 router.post('/create', async (req, res)=>{
     const {email, password} = req.body;
     if(!email || !password) return res.status(400).send({error: 'Dados Insuficientes!'});
@@ -36,6 +39,8 @@ router.post('/create', async (req, res)=>{
     }
 });
 
+
+//Autenticação de usuários Será enviado um email e uma senha caso o usuário esteja cadastrado irá retornar os dados com nome email eo token
 router.post('/auth', async (req, res) => {
     const { email, password } = req.body;
     if (!email || !password) return res.status(400).send({error: 'Dados insuficientes!'});
