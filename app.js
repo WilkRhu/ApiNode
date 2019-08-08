@@ -7,8 +7,8 @@ const config = require('./config/config');
 
 //string de conexão 
 
-const url = config.bd_string;
-const options = { reconnectTries: Number.MAX_VALUE, reconnectInterval: 500, poolSize: 5, useNewUrlParser: true};
+//const url = config.bd_string;
+//const options = { reconnectTries: Number.MAX_VALUE, reconnectInterval: 500, poolSize: 5, useNewUrlParser: true};
 
 mongoose.connect(url, options);
 mongoose.set('useCreateIndex', true);
