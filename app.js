@@ -7,7 +7,7 @@ const config = require('./config/config');
 
 //string de conexão 
 
-const url = config.bd_string;
+const url = "mongodb+srv://usuario_admin:111209@clusterapi-n3pu5.mongodb.net/test?retryWrites=true&w=majority";
 const options = { reconnectTries: Number.MAX_VALUE, reconnectInterval: 500, poolSize: 5, useNewUrlParser: true};
 
 mongoose.connect(url, options);
