@@ -1,9 +1,9 @@
 # ApiNode
 Teste de admissão Concrete
 Criação de Api com autenticação de usuário
-Banco de dados ultilizado momgo DB Atlas banco funcinando online
-Ultilizado o express
-Linha de comando para start é // node app.js
+Banco de dados ultilizado momgo DB Atlas banco funcinando online;
+Ultilizado o express, mongoose, bcrypt entre outras dependencias;
+Linha de comando para start é // node app.js caso necessário start local;
 
 Rotas
 Url Base de acesso: https://apinodeconcrete.herokuapp.com/
@@ -29,5 +29,5 @@ Corpo do auth:
 
 Rota home representa a entrada no sistema, só passa pela rota quem for autenticado ('/home');
 
-Rota lista-users quem passar o token de autenticação pelo header, terá acesso a uma lista de usuários cadastrada no banco ('users/lista-users')
+Rota lista-users quem passar o token de autenticação pelo header, terá acesso a uma lista de usuários cadastrada no banco ('users/lista-users');
 
