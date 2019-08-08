@@ -2,7 +2,7 @@
 Teste de admissão Concrete
 Criação de Api com autenticação de usuário
 Banco de dados ultilizado momgo DB Atlas banco funcinando online;
-Ultilizado o express, mongoose, bcrypt entre outras dependencias;
+Ultilizado o express, mongoose, bcrypt, jwt entre outras dependencias;
 Linha de comando para start é // node app.js caso necessário start local;
 
 Rotas
