@@ -3,6 +3,7 @@ const app = express();
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const config = require('./config/config');
+const porta = process.env.PORT || 8080;
 
 //string de conexão 
 
@@ -35,6 +36,6 @@ app.use('/users', userRoute);
 
 //Porta
 app.listen(3000);
-
+app.listen(porta);
 //Exportação do app
 module.exports = app;
