@@ -5,12 +5,9 @@ const bodyParser = require('body-parser');
 const config = require('./config/config');
 
 
-//string de conexão 
-
-const url = "mongodb+srv://usuario_admin:111209@clusterapi-n3pu5.mongodb.net/test?retryWrites=true&w=majority";
 const options = { reconnectTries: Number.MAX_VALUE, reconnectInterval: 500, poolSize: 5, useNewUrlParser: true};
 
-mongoose.connect(url, options);
+mongoose.connect(config.bd_string, options);
 mongoose.set('useCreateIndex', true);
 mongoose.connection.on('error', (err) => {
     console.log('Erro na conexão com o banco de dados:' + err);
@@ -29,13 +26,20 @@ app.use(bodyParser.json());
 
 
 const indexRoute = require('./routes/index');
-const userRoute = require('./routes/users');
+const userRoute = require('./routes/admins/users');
+const alunoRoute = require('./routes/alunos/alunos');
+const teacherRoute = require('./routes/teacher/teachers');
+const aulasRoute =  require('./routes/aulas/aulas');
 
 app.use('/', indexRoute);
 app.use('/users', userRoute);
-
+app.use('/alunos', alunoRoute);
+app.use('/teacher', teacherRoute);
+app.use('/aulas', aulasRoute);
 //Porta
-app.listen(process.env.PORT || 3000);
+app.listen(3000, () => {
+    console.log("Aplicação rodando na porta 3000")
+});
 
 //Exportação do app
 module.exports = app;
