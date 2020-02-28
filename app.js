@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const config = require('./config/config');
 
 
-const options = { reconnectTries: Number.MAX_VALUE, reconnectInterval: 500, poolSize: 5, useNewUrlParser: true};
+const options = { reconnectTries: Number.MAX_VALUE, reconnectInterval: 500, poolSize: 5, useUnifiedTopology: true, useNewUrlParser: true};
 
 mongoose.connect(config.bd_string, options);
 mongoose.set('useCreateIndex', true);
