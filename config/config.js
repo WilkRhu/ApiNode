@@ -1,5 +1,4 @@
 const env = process.env.NODE_ENV || 'dev';
-const mongoose = require('mongoose');
 
 
 
