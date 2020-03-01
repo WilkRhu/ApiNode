@@ -3,6 +3,7 @@ const app = express();
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const config = require('./config/config');
+const cors = require('cors');
 
 
 const options = { reconnectTries: Number.MAX_VALUE, reconnectInterval: 500, poolSize: 5, useUnifiedTopology: true, useNewUrlParser: true};
@@ -21,9 +22,9 @@ mongoose.connection.on('connected', () =>{
 });
 
 //Configurar o body parser
+app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false}));
 app.use(bodyParser.json());
-
 
 const indexRoute = require('./routes/index');
 const userRoute = require('./routes/admins/users');
@@ -37,8 +38,8 @@ app.use('/alunos', alunoRoute);
 app.use('/teacher', teacherRoute);
 app.use('/aulas', aulasRoute);
 //Porta
-app.listen(3000, () => {
-    console.log("Aplicação rodando na porta 3000")
+app.listen(process.env.PORT || 3001, () => {
+    console.log("Aplicação rodando na porta 3001")
 });
 
 //Exportação do app

@@ -13,7 +13,7 @@ const createUserToken = (userId) => {
 router.get('/',  async(req, res) => {
     try{
         const alunos = await Alunos.find({});
-        return res.send(alunos);
+        return res.json(alunos);
     }catch(err) {
         return res.status(500).send({ err: 'Erro na consulta de Alunos! '})
     }

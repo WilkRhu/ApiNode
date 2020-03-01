@@ -7,6 +7,8 @@ const AulasSchema = new Schema({
   },
   title: { type: String },
   content: { type: String },
+  name_teacher: {type: String},
+  link: {type: String},
   create_at: { type: String, default: Date.now },
   update_at: { type: Date }
 });
