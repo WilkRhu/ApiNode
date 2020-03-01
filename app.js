@@ -40,9 +40,7 @@ app.use('/alunos', alunoRoute);
 app.use('/teacher', teacherRoute);
 app.use('/aulas', aulasRoute);
 //Porta
-app.listen(process.env.PORT || 3001, () => {
-    console.log("Aplicação rodando na porta 3001")
-});
+app.listen(process.env.PORT || 3001);
 
 //Exportação do app
 module.exports = app;
