@@ -8,17 +8,17 @@ const config = () =>{
     switch (env) {
         case 'dev':
             return{
-                bd_string: 'mongodb+srv://usuario_admin:111209@cluster0-qafht.mongodb.net/test?retryWrites=true&w=majority'
+                bd_string: process.env.URL_DB
             }
 
         case 'html':
             return{
-                bd_string: 'mongodb+srv://usuario_admin:111209@cluster0-qafht.mongodb.net/test?retryWrites=true&w=majority'
+                bd_string: process.env.URL_DB
             }   
             
         case 'prod':
             return{
-                bd_string: 'mongodb+srv://usuario_admin:111209@cluster0-qafht.mongodb.net/test?retryWrites=true&w=majority'
+                bd_string: process.env.URL_DB
             }
     }
 }

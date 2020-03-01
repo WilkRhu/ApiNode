@@ -1,9 +1,11 @@
+require('dotenv').config();
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const config = require('./config/config');
 const cors = require('cors');
+
 
 
 const options = { reconnectTries: Number.MAX_VALUE, reconnectInterval: 500, poolSize: 5, useUnifiedTopology: true, useNewUrlParser: true};
