@@ -3,13 +3,14 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const config = require('./config/config');
 const cors = require('cors');
 
 
-const url = process.env.URL_DB;
+
 const options = { useUnifiedTopology: true, useNewUrlParser: true};
 
-mongoose.connect(url, options);
+mongoose.connect(config.bd_string, options);
 mongoose.set('useCreateIndex', true);
 mongoose.connection.on('error', (err) => {
     console.log('Erro na conexão com o banco de dados:' + err);
