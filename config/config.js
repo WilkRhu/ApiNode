@@ -1,5 +1,5 @@
 const env = process.env.NODE_ENV || 'dev';
-
+const mongoose = require('mongoose');
 
 
 
@@ -21,6 +21,7 @@ const config = () =>{
                 bd_string: process.env.URL_DB
             }
     }
+
 }
 
 console.log(`Iniciando a API em ambiente ${env.toUpperCase()}`);
