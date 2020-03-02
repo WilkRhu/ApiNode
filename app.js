@@ -26,6 +26,7 @@ mongoose.connection.on('connected', () =>{
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false}));
 app.use(bodyParser.json());
+app.use(express.static(`${__dirname}/build`));
 
 const indexRoute = require('./routes/index');
 const userRoute = require('./routes/admins/users');
