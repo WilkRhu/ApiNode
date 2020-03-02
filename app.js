@@ -7,10 +7,10 @@ const config = require('./config/config');
 const cors = require('cors');
 
 
-
+const url = "mongodb+srv://usuario_admin:111209@cluster0-qafht.mongodb.net/test?retryWrites=true&w=majority";
 const options = { useUnifiedTopology: true, useNewUrlParser: true};
 
-mongoose.connect(config.bd_string, options);
+mongoose.connect(url, options);
 mongoose.set('useCreateIndex', true);
 mongoose.connection.on('error', (err) => {
     console.log('Erro na conexão com o banco de dados:' + err);
