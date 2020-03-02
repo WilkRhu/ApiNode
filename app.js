@@ -34,7 +34,7 @@ const alunoRoute = require('./routes/alunos/alunos');
 const teacherRoute = require('./routes/teacher/teachers');
 const aulasRoute =  require('./routes/aulas/aulas');
 
-app.use('/', indexRoute);
+app.use('/home', indexRoute);
 app.use('/users', userRoute);
 app.use('/alunos', alunoRoute);
 app.use('/teacher', teacherRoute);
